@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#05060f" />
+<title>Projects — Muhammad Pristiwanto</title>
+<meta name="description" content="Kumpulan project dan studi kasus Muhammad Pristiwanto di bidang warehouse, shipping administration, dan web development." />
+
+<link rel="icon" type="image/png" href="assets/favicon.png" />
+<link rel="apple-touch-icon" href="assets/favicon.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/projects.css">
+<link rel="stylesheet" href="css/theme.css">
+</head>
+<body>
+
+<div class="bg" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+  <div class="blob blob-4"></div>
+  <div class="grain"></div>
+</div>
+<div class="cursor-glow" aria-hidden="true"></div>
+
+<nav class="nav glass">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <img id="brandPhoto" src="assets/profile-dark.jpg"
+           alt="Muhammad Pristiwanto" class="brand-photo">
+      <span class="brand-text">Muhammad&nbsp;<b>Pristiwanto</b></span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="index.html#about">Tentang</a></li>
+      <li><a href="index.html#experience">Pengalaman</a></li>
+      <li><a href="index.html#education">Pendidikan</a></li>
+      <li><a href="index.html#skills">Keahlian</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="index.html#contact" class="nav-cta">Kontak</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <button class="theme-toggle" aria-label="Ganti tema" title="Ganti tema">
+        <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18"
+             fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18"
+             fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+        </svg>
+      </button>
+
+      <button class="menu-btn" aria-label="Buka menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+  <section class="page-hero">
+    <div class="container">
+      <a href="index.html" class="back-link reveal">← Kembali ke Beranda</a>
+      <span class="chip reveal" style="margin-top:20px">
+        <span class="chip-dot"></span>
+        Kumpulan Karya &amp; Studi Kasus
+      </span>
+      <h1 class="page-title reveal">
+        Project <span class="grad-text">Saya</span>
+      </h1>
+      <p class="page-sub reveal">
+        Dokumentasi pekerjaan dan studi kasus yang saya kerjakan di bidang
+        <b>warehouse administration</b>, <b>shipping &amp; logistik</b>,
+        serta <b>web development</b>.
+      </p>
+    </div>
+  </section>
+
+  <section class="filter-section">
+    <div class="container">
+      <div class="filter-bar glass reveal">
+        <span class="filter-label">Filter:</span>
+        <div class="filter-chips" role="tablist">
+          <button class="filter-chip active" data-filter="all">Semua</button>
+          <button class="filter-chip" data-filter="warehouse">Warehouse</button>
+          <button class="filter-chip" data-filter="shipping">Shipping</button>
+          <button class="filter-chip" data-filter="web">Web</button>
+          <button class="filter-chip" data-filter="mobile">Mobile</button>
+        </div>
+        <span class="filter-count" id="projectCount">0 project</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="projects-section">
+    <div class="container">
+      <div class="projects-grid" id="projectsGrid">
+
+        <article class="project glass tilt reveal" data-category="web">
+          <div class="project-thumb" data-theme="indigo">
+            <span class="project-emoji">📦</span>
+            <span class="project-badge">Web App</span>
+          </div>
+          <div class="project-body">
+            <h3>Sistem Monitoring Stok Gudang</h3>
+            <p>
+              Dashboard sederhana berbasis web untuk memantau stok masuk/keluar,
+              stok minimum, dan riwayat pergerakan barang.
+            </p>
+            <ul class="project-tags">
+              <li>HTML</li><li>CSS</li><li>JavaScript</li><li>Google Sheets API</li>
+            </ul>
+            <div class="project-footer">
+              <span class="project-role">Peran: Web Developer</span>
+              <a href="#" class="project-link">Lihat Detail →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project glass tilt reveal" data-category="warehouse">
+          <div class="project-thumb" data-theme="teal">
+            <span class="project-emoji">🗂️</span>
+            <span class="project-badge">Warehouse</span>
+          </div>
+          <div class="project-body">
+            <h3>Digitalisasi SOP Penyimpanan FIFO / FEFO</h3>
+            <p>
+              Penyusunan SOP digital untuk penataan barang berdasarkan prinsip
+              FIFO, LIFO, dan FEFO, termasuk template checklist harian.
+            </p>
+            <ul class="project-tags">
+              <li>SOP</li><li>Documentation</li><li>ISO 9001</li>
+            </ul>
+            <div class="project-footer">
+              <span class="project-role">Peran: Warehouse Admin</span>
+              <a href="#" class="project-link">Lihat Detail →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project glass tilt reveal" data-category="shipping">
+          <div class="project-thumb" data-theme="pink">
+            <span class="project-emoji">🚚</span>
+            <span class="project-badge">Shipping</span>
+          </div>
+          <div class="project-body">
+            <h3>Dashboard Laporan Pengiriman Harian</h3>
+            <p>
+              Template dan dashboard pelaporan pengiriman barang harian yang
+              mencakup nomor DO, tujuan, jumlah item, dan status pengiriman.
+            </p>
+            <ul class="project-tags">
+              <li>Excel</li><li>Reporting</li><li>Logistics</li>
+            </ul>
+            <div class="project-footer">
+              <span class="project-role">Peran: Shipping Admin</span>
+              <a href="#" class="project-link">Lihat Detail →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project glass tilt reveal" data-category="warehouse">
+          <div class="project-thumb" data-theme="violet">
+            <span class="project-emoji">📊</span>
+            <span class="project-badge">Warehouse</span>
+          </div>
+          <div class="project-body">
+            <h3>Optimasi Tata Letak &amp; Ruang Penyimpanan</h3>
+            <p>
+              Rancangan ulang layout gudang untuk efisiensi akses barang,
+              pengurangan waktu picking, dan pemanfaatan ruang maksimal.
+            </p>
+            <ul class="project-tags">
+              <li>Layout Plan</li><li>Space Optimization</li><li>5S</li>
+            </ul>
+            <div class="project-footer">
+              <span class="project-role">Peran: Warehouse Admin</span>
+              <a href="#" class="project-link">Lihat Detail →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project glass tilt reveal" data-category="web">
+          <div class="project-thumb" data-theme="cyan">
+            <span class="project-emoji">🌐</span>
+            <span class="project-badge">Web</span>
+          </div>
+          <div class="project-body">
+            <h3>Website Portofolio Pribadi</h3>
+            <p>
+              Website portofolio interaktif dengan tema liquid glass,
+              di-host gratis di GitHub Pages.
+            </p>
+            <ul class="project-tags">
+              <li>HTML</li><li>CSS</li><li>JavaScript</li><li>GitHub Pages</li>
+            </ul>
+            <div class="project-footer">
+              <span class="project-role">Peran: Web Developer</span>
+              <a href="index.html" class="project-link">Lihat Situs →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project glass tilt reveal" data-category="mobile">
+          <div class="project-thumb" data-theme="orange">
+            <span class="project-emoji">📱</span>
+            <span class="project-badge">Mobile</span>
+          </div>
+          <div class="project-body">
+            <h3>Maintenance Software &amp; Hardware Android</h3>
+            <p>
+              Perawatan dan perbaikan perangkat Android untuk keperluan kerja:
+              flashing, optimasi performa, backup data.
+            </p>
+            <ul class="project-tags">
+              <li>Android</li><li>Troubleshooting</li><li>Hardware</li>
+            </ul>
+            <div class="project-footer">
+              <span class="project-role">Peran: Technician</span>
+              <a href="#" class="project-link">Lihat Detail →</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="empty-state glass reveal" id="emptyState" hidden>
+        <div class="empty-icon">🔍</div>
+        <h3>Tidak ada project di kategori ini</h3>
+        <p>Coba pilih kategori lain, atau lihat semua project.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-card glass reveal">
+        <div class="cta-glow"></div>
+        <h2>Punya project yang ingin dikerjakan bersama?</h2>
+        <p>
+          Saya terbuka untuk kolaborasi, konsultasi singkat, atau diskusi
+          seputar warehouse, shipping, dan web development.
+        </p>
+        <div class="hero-actions" style="justify-content:center;margin-top:24px">
+          <a href="index.html#contact" class="btn btn-primary">Hubungi Saya</a>
+          <a href="https://wa.me/6282294490992" target="_blank" rel="noopener" class="btn btn-ghost">
+            Chat WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  © <span id="year"></span> Muhammad Pristiwanto A.Md Kom ·
+  Hosted on <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/projects.js"></script>
+</body>
+</html>
