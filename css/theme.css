@@ -1,0 +1,246 @@
+/* ============================================================
+   theme.css — tombol tema + light mode + foto adaptif tema
+   ============================================================ */
+
+/* ============================================================
+   TOMBOL TEMA (light/dark toggle)
+   ============================================================ */
+
+.theme-toggle {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 12px;
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  color: var(--text);
+  cursor: pointer;
+  overflow: hidden;
+  flex-shrink: 0;
+  transition: background 0.25s, border-color 0.25s, transform 0.2s;
+}
+.theme-toggle:hover {
+  background: var(--glass-bg-2);
+  border-color: var(--glass-border-hi);
+  transform: translateY(-1px);
+}
+
+.theme-toggle svg {
+  position: absolute;
+  transition: transform 0.45s cubic-bezier(.2,.8,.2,1), opacity 0.3s;
+}
+
+.theme-toggle .icon-moon { opacity: 1; transform: rotate(0) scale(1); }
+.theme-toggle .icon-sun  { opacity: 0; transform: rotate(-90deg) scale(0.5); }
+
+[data-theme="light"] .theme-toggle .icon-moon { opacity: 0; transform: rotate(90deg) scale(0.5); }
+[data-theme="light"] .theme-toggle .icon-sun  { opacity: 1; transform: rotate(0) scale(1); }
+
+/* ============================================================
+   FOTO PROFIL — 1 img per lokasi, ganti src via JS
+   ============================================================ */
+
+/* --- Foto kecil di navbar --- */
+.brand-photo {
+  display: block;
+  width: 36px !important;
+  height: 36px !important;
+  min-width: 36px !important;
+  min-height: 36px !important;
+  max-width: 36px !important;
+  max-height: 36px !important;
+  flex: 0 0 36px !important;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  transition: filter 0.4s ease, box-shadow 0.4s ease;
+}
+
+[data-theme="dark"] .brand-photo,
+html:not([data-theme]) .brand-photo {
+  box-shadow:
+    0 4px 14px rgba(99,102,241,0.45),
+    inset 0 0 0 2px rgba(255,255,255,0.22);
+  filter: brightness(1.08) contrast(1.05) saturate(1.12);
+}
+[data-theme="light"] .brand-photo {
+  box-shadow:
+    0 4px 14px rgba(99,102,241,0.25),
+    inset 0 0 0 2px rgba(99,102,241,0.32);
+  filter: brightness(0.98) contrast(1.02);
+}
+
+/* --- Foto besar di hero card --- */
+.avatar {
+  display: block;
+  width: 120px !important;
+  height: 120px !important;
+  min-width: 120px !important;
+  min-height: 120px !important;
+  max-width: 120px !important;
+  max-height: 120px !important;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  padding: 4px;
+  margin: 0 auto 20px;
+  box-sizing: border-box;
+  background: linear-gradient(135deg, #6366f1 0%, #22d3ee 100%);
+  background-clip: content-box;
+  -webkit-background-clip: content-box;
+  transition: filter 0.4s ease, box-shadow 0.4s ease;
+}
+
+[data-theme="dark"] .avatar,
+html:not([data-theme]) .avatar {
+  box-shadow:
+    0 20px 50px rgba(99,102,241,0.55),
+    0 0 0 1px rgba(255,255,255,0.08);
+  filter: brightness(1.05) contrast(1.05) saturate(1.1);
+}
+[data-theme="light"] .avatar {
+  box-shadow:
+    0 20px 50px rgba(99,102,241,0.30),
+    0 0 0 1px rgba(10,16,32,0.06);
+  filter: brightness(0.97) contrast(1.03);
+}
+
+/* --- Glow belakang avatar --- */
+[data-theme="light"] .hero-card-glow { opacity: 0.15; filter: blur(36px); }
+[data-theme="dark"]  .hero-card-glow,
+html:not([data-theme]) .hero-card-glow { opacity: 0.35; filter: blur(30px); }
+
+/* --- Animasi pulse saat ganti tema --- */
+@keyframes avatarPulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
+.avatar-pulse { animation: avatarPulse 0.5s ease-out; }
+
+/* ============================================================
+   LIGHT MODE — Variabel Warna
+   ============================================================ */
+
+[data-theme="light"] {
+  --bg-0: #eef1f8;
+  --bg-1: #e2e7f2;
+
+  --glass-bg:        rgba(255, 255, 255, 0.55);
+  --glass-bg-2:      rgba(255, 255, 255, 0.78);
+  --glass-border:    rgba(10, 16, 32, 0.09);
+  --glass-border-hi: rgba(10, 16, 32, 0.20);
+  --glass-shadow:    0 10px 40px rgba(70, 90, 140, 0.12);
+
+  --text:       #0a1020;
+  --text-soft:  #3a4560;
+  --text-muted: #6b7690;
+}
+
+[data-theme="light"] .bg {
+  background: radial-gradient(ellipse at top, #e7ecfa 0%, var(--bg-0) 55%);
+}
+[data-theme="light"] .bg::after {
+  background-image:
+    linear-gradient(rgba(10,16,32,0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(10,16,32,0.035) 1px, transparent 1px);
+}
+[data-theme="light"] .blob  { opacity: 0.35; }
+[data-theme="light"] .grain { opacity: 0.02; }
+
+[data-theme="light"] .hero-card-rows .row,
+[data-theme="light"] .about-facts ul li,
+[data-theme="light"] .project-footer {
+  border-color: rgba(10,16,32,0.08);
+}
+[data-theme="light"] .job-meta,
+[data-theme="light"] .project-tags li,
+[data-theme="light"] .filter-count {
+  background: rgba(10,16,32,0.04);
+  border-color: rgba(10,16,32,0.10);
+}
+[data-theme="light"] .nav-links a:hover,
+[data-theme="light"] .nav-links a.active,
+[data-theme="light"] .filter-chip:hover {
+  background: rgba(10,16,32,0.06);
+}
+
+[data-theme="light"] .project-emoji {
+  filter: drop-shadow(0 6px 18px rgba(0,0,0,0.18));
+}
+
+[data-theme="light"] .cursor-glow {
+  background: radial-gradient(circle, rgba(99,102,241,0.14), transparent 60%);
+}
+[data-theme="light"] .cta-glow { opacity: 0.22; }
+
+[data-theme="light"] .glass::before {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.9), transparent);
+}
+[data-theme="light"] .glass::after {
+  background: radial-gradient(
+    400px circle at var(--mx, 50%) var(--my, 50%),
+    rgba(99,102,241,0.06),
+    transparent 40%
+  );
+}
+
+[data-theme="light"] ::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #8b95c9, #b0b8dd);
+  border-color: var(--bg-0);
+}
+
+/* Transisi antar tema */
+html, body, .bg, .glass, .nav, .btn, .chip,
+.hero-card, .job, .edu, .skill, .contact-card {
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease,
+    border-color 0.4s ease;
+}
+
+/* ============================================================
+   RESPONSIVE — ukuran foto & tombol
+   ============================================================ */
+
+@media (max-width: 720px) {
+  .brand-photo {
+    width: 34px !important;
+    height: 34px !important;
+    min-width: 34px !important;
+    min-height: 34px !important;
+    max-width: 34px !important;
+    max-height: 34px !important;
+    flex: 0 0 34px !important;
+    border-radius: 10px;
+  }
+  .theme-toggle {
+    width: 38px !important;
+    height: 38px !important;
+  }
+  .avatar {
+    width: 100px !important;
+    height: 100px !important;
+    min-width: 100px !important;
+    min-height: 100px !important;
+    max-width: 100px !important;
+    max-height: 100px !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .brand-photo {
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px !important;
+    min-height: 36px !important;
+    max-width: 36px !important;
+    max-height: 36px !important;
+    flex: 0 0 36px !important;
+  }
+}
